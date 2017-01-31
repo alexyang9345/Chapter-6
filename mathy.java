@@ -64,9 +64,7 @@ public class mathy
         for (; i < num1.length; i++)
         {
             if (num1[i]%2 != 0)
-            {
                 odd[i] = num1[i];
-            }
         }
         
         return odd;
@@ -76,16 +74,25 @@ public class mathy
 
 
 
+    /**
+     * takes the even numbers out of an array
+     * @param int[] values, int[] even values
+     * @return none
+     */
 
 
-
-    public void getEven(int[] num, int evennum [])
+    public void getEven(int[] num, int even [])
     {
-
-
-
-
-
+        int i = 0, z = 0;
+        
+        for(; i < num.length; i++)
+        {
+            if (num[1] % 2 == 0)
+                even[i] = num[i];
+        
+        
+        }
+        
     }//end of getEven
 
 

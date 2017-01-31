@@ -26,11 +26,14 @@ public static void main (String[] args)
          
        int x = 50;
        
-       int[] num = new int[20]; //arrays are objects
+       mathy useful = new mathy();
+       
+       int[] num = new int[1000]; //arrays are objects
        int[] values = new int[20];
        int[] oddnum = new int[num.length];
        int[] evennum = new int[num.length];
        int[] negnum = new int[MAX];
+       String[] names = {"Charlie", "Megan", "Tadd", "Patrick", "Jake"};
 
        Random gen = new Random();
 // populate with random numbers range -50 to 50
@@ -58,15 +61,14 @@ public static void main (String[] args)
 
 
 
-/**
+/**/
         int look = 42;
-/**
-        System.out.println(Searches.linearSearch(num,look)  );
-        System.out.println(Searches.binarySearch(num,look)  );
-/**
+/**/
+        System.out.println("Found" + Searches.linearSearch(num,look)  );
+        //System.out.println(Searches.binarySearch(num,look)  );
 
-/*
 
+/**/
         //Sorts.selectionSort(num);
         System.out.println(num.length  );
         num = doubleSize(num);
@@ -74,16 +76,23 @@ public static void main (String[] args)
 
         for (int s : num)
         {
+            
         }
 
 
-/*      odd(num,oddnum);
+        odd(num,oddnum);
 
         System.out.println("---------------");
-
+        oddnum = useful.getOdd(num);
+        //useful.getEven(num, evennum);
+        //for each look
+        int count = 0;
+        
         for (int s : oddnum)
+        {
             System.out.println(s);
-
+        }
+        
 
 
 /*
@@ -137,6 +146,7 @@ public static void main (String[] args)
 
    public static void foo(int x)
    {
+       // won't change original integer
        x = 100;
    }
 
@@ -144,6 +154,7 @@ public static void main (String[] args)
 
     public static void foo(int [] num)
       {
+          // will change original array
           num[0] = 100;
       }
 
