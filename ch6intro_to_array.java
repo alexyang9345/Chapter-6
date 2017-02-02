@@ -28,7 +28,7 @@ public static void main (String[] args)
        
        mathy useful = new mathy();
        
-       int[] num = new int[1000]; //arrays are objects
+       int[] num = new int[10000]; //arrays are objects
        int[] values = new int[20];
        int[] oddnum = new int[num.length];
        int[] evennum = new int[num.length];
@@ -56,7 +56,7 @@ public static void main (String[] args)
        
         
         
-/**        
+        
         System.out.println("----------SORTING-----------"  );
 
 
@@ -64,11 +64,12 @@ public static void main (String[] args)
 /**/
         int look = 42;
 /**/
-        System.out.println("Found" + Searches.linearSearch(num,look)  );
-        //System.out.println(Searches.binarySearch(num,look)  );
+        //System.out.println("Found" + Searches.linearSearch(num,look)  );
+        //Sorts.selectionSort(num);
+        Sorts.insertionSort(num);
+        System.out.println("Found " + Searches.binarySearch(num,look) );
 
-
-/**/
+/*
         //Sorts.selectionSort(num);
         System.out.println(num.length  );
         num = doubleSize(num);
@@ -87,7 +88,7 @@ public static void main (String[] args)
         //useful.getEven(num, evennum);
         //for each look
         int count = 0;
-        
+/*        
         for (int s : oddnum)
         {
             System.out.println(s);
@@ -121,7 +122,7 @@ public static void main (String[] args)
 
 
 
-*/
+/*
        foo(num[0]);
        System.out.println("------" + num[0]);
        
