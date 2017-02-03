@@ -51,13 +51,9 @@ public class Address implements Comparable
        
        for(int i = 0; i < city.length(); i++)
            factor += city.charAt(i);
+       
        hash_num *= factor;
-       
-       int x = 0;
-       
-       for(int i = 0; i < state.length(); i++)
-           x += state.charAt(i);
-       hash_num *= x;
+       hash_num += zipCode;
        
        return hash_num;
    }

@@ -32,21 +32,35 @@ Address Me = new Address("916 Elm", "Flossmoor", "IL", 60518);
        //Sort the Addresses
 
 
-
       String hash1 = contacts[3].toString();
       
       for (Address temp: contacts)
+      {
         System.out.println(temp.hash());
-
-        int hash2 = 0;
-       for( int i = 0; i<hash1.length();i++)
-       {
+        System.out.print("-" + temp.hash()%30);
+      }
+ 
+      Address [] hash_array = new Address[contacts.length*3];
+      
+      for(int i = 0; i < contacts.length; i++)
+      {
+          hash_array[contacts[i].hash()%30] = contacts[i];
+      }
+      
+      for (Address temp: hash_array)
+      {
+        System.out.println(temp);
+      }
+      
+/**
+      int hash2 = 0;
+      for( int i = 0; i<hash1.length();i++)
+      {
             hash2 += hash1.charAt(i);
-        }
+      }
 
         System.out.print(hash2%20);
-
-
+**/
 
 
    }

@@ -223,7 +223,17 @@ public class mathy
 
    }
 
-
+   public static void displayNim(int[] stones)
+   {
+       for (int i = 0; i < 3; i++)
+       {
+           for (int j = 0; j < stones[i]; j++)
+           {
+               System.out.print("O");
+           }
+       }
+       
+       System.out.println("\n");
 
 
 
