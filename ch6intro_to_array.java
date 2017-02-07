@@ -134,6 +134,33 @@ public static void main (String[] args)
 
 
 */
+
+    int [][] scores = { {1,2,3},//6
+                       {2,2,3},//7
+                       {3,2,3},//8
+                       {4,2,3} };//9
+   
+    System.out.println(scores[0].length+" col");
+    System.out.println(scores.length+" row");
+    
+    System.out.println("The sum of this array is " + mathy.sum2DArray(scores) + ". ");
+    
+    System.out.println("The sum of this row is " + mathy.sumOneRow2DArray(scores, 3) + ". ");
+    System.out.println("The sum of this col is " + mathy.sumOneCol2DArray(scores, 3) + ". ");
+   
+    int [][] table = new int [5][10];
+    
+    for (int row = 0; row < table.length; row++)
+        for (int col = 0; col < table[row].length; col++)
+            table[row][col] = row * 10 + col;
+    
+    for (int row = 0; row < table.length; row++)
+    {
+        for (int col = 0; col < table[row].length; col++)
+            System.out.print(table[row][col] + "\t");
+        System.out.println();
+    }
+   
 }// end of main
 
    public static int[] doubleSize(int[] array)
@@ -169,6 +196,9 @@ public static void main (String[] args)
 
 
    }// end of odd
+   
+   
+   
 /*
  //====================================================
      public static int[] neg(int[] m_num)
