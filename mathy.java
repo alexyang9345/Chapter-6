@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 public class mathy
 {
     private int [][] square;
+    private int magic_num;
 
     /**
         default constructor - stubed in
@@ -45,7 +46,7 @@ public class mathy
 
 
 
-//}end of class
+    //}end of class
 
 
 
@@ -230,8 +231,8 @@ public class mathy
         @param int []
         @return int [] twice the size, with values copied over
     */
-   public static int[] doubleSize(int[] array)
-   {
+    public static int[] doubleSize(int[] array)
+    {
        //make temp 2 times the size of array
        int[] temp = new int[array.length * 2];
        System.out.println(temp.length +"-" );
@@ -245,10 +246,10 @@ public class mathy
 
         return array;
 
-   }
+    }
 
-   public static void displayNim(int[] stones)
-   {
+    public static void displayNim(int[] stones)
+    {
        for (int i = 0; i < 3; i++)
        {
            for (int j = 0; j < stones[i]; j++)
@@ -262,15 +263,40 @@ public class mathy
 
 
 
-
-
-
-
-
-
-
-
-
-
     }
-}//end of class
+    public boolean isMagic()
+    {
+       boolean result = false;
+       //if (
+       return result;
+    }//end of class
+    
+    public void setMagicSquare()
+    {
+        int value = 0;
+        for (int i = 0; i < square[0].length; i++)
+        {
+            value = square[0][i];
+            magic_num += value;
+        }
+    }
+    
+    public boolean check()
+    {
+        int row_total = 0, col_total = 0;
+        boolean rows, cols, diag, test;
+        for (int i = 0; i < square[0].length; i++)
+        {
+            for (int j = 0; j < square[0].length; j++)
+            {
+                row_total += square[i][j];
+                col_total += square[j][i];
+            }
+        }
+        if (rows == true && cols == true && diag == true)
+        {
+            test = true;
+        }
+        return test;
+    }
+}
