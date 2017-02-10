@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 public class mathy
 {
     private int [][] square;
+    private int [][] magic_square;
     private int magic_num;
 
     /**
@@ -271,32 +272,43 @@ public class mathy
        return result;
     }//end of class
     
-    public void setMagicSquare()
+    public void setMagicSquare(int [][] magic_square)
     {
         int value = 0;
-        for (int i = 0; i < square[0].length; i++)
+        this.magic_square = magic_square;
+        for (int i = 0; i < magic_square[0].length; i++)
         {
-            value = square[0][i];
+            value = magic_square[0][i];
             magic_num += value;
         }
     }
     
     public boolean check()
     {
-        int row_total = 0, col_total = 0;
-        boolean rows, cols, diag, test;
-        for (int i = 0; i < square[0].length; i++)
+        int row_total = 0, col_total = 0, diag_total1 = 0, diag_total2 = 0, length = square[0].length;
+        boolean test;
+        for (int i = 0; i < magic_square[0].length; i++)
         {
-            for (int j = 0; j < square[0].length; j++)
+            for (int j = 0; j < magic_square[0].length; j++)
             {
-                row_total += square[i][j];
-                col_total += square[j][i];
+                row_total += magic_square[i][j];
+                col_total += magic_square[j][i];
             }
+            diag_total1 += magic_square[i][i];
+            diag_total2 += magic_square[length - i][i];
         }
-        if (rows == true && cols == true && diag == true)
+        if (row_total == magic_num && col_total == magic_num && diag_total1 == magic_num && diag_total2 == magic_num)
         {
             test = true;
         }
+        else
+        {
+            test = false;
+        }
         return test;
+    }
+    public int getMagicNum()
+    {
+        return magic_num;
     }
 }
