@@ -38,37 +38,48 @@ public class MagicSquareTest
                         {17, 5, 13, 21, 9},
                         {10, 18, 1, 14, 22},
                         {23, 6, 19, 2, 15}};
+<<<<<<< HEAD
 
     mathy useful = new mathy(square);
     useful.setMagicSquare(square);
 
+=======
+    
+    //initializes useful and sets the magicSquare to the first square
+    mathy useful = new mathy(square);
+    useful.setMagicSquare(square);
+    
+    //if the square is magic, a confirmation will display along with the magic number. If not, "Hello muggle" will be printed
+>>>>>>> origin/master
     if (useful.isMagic())
         System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
     else
         System.out.println("Hello muggle");
+<<<<<<< HEAD
 
+=======
+        
+    //repeats above steps for squares 2 and 3    
+    
+>>>>>>> origin/master
     useful.setMagicSquare(square1);
     // print the same results for square2 and square3
     if (useful.isMagic())
-		System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
-	else
-		System.out.println("Hello muggle");
-		
+        System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
+    else
+        System.out.println("Hello muggle");
+        
     useful.setMagicSquare(square2);
     if (useful.isMagic())
+<<<<<<< HEAD
 		System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
 	else
 		System.out.println("Hello muggle");
+=======
+        System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
+    else
+        System.out.println("Hello muggle");
+>>>>>>> origin/master
 }//end of main
 }// end of class
-
-
-
-
-
-
-
-
-
-
 

@@ -268,14 +268,20 @@ public class mathy
     
     public boolean isMagic()
     {
+       //returns true or false based on whether or not the square is magic (check returns a boolean)
        return check();
     }//end of class
     
     public void setMagicSquare(int [][] magic_square)
     {
+        //initializes variables and magic_square
         int value = 0;
         this.magic_square = magic_square;
         magic_num = 0;
+<<<<<<< HEAD
+=======
+        //sets the magic_num for each square
+>>>>>>> origin/master
         for (int i = 0; i < magic_square[0].length; i++)
         {
             value = magic_square[0][i];
@@ -285,26 +291,44 @@ public class mathy
     
     public boolean check()
     {
+<<<<<<< HEAD
+=======
+        //initializes variables
+>>>>>>> origin/master
         int row_total = 0, col_total = 0, diag_total1 = 0, diag_total2 = 0, max_index = magic_square[0].length - 1;
         boolean test, error = true;
+        //
         for (int i = 0; i < magic_square[0].length; i++)
         {
+            //checks the total of a row and a column (from first to last)
             for (int j = 0; j < magic_square[0].length; j++)
             {
                 row_total += magic_square[i][j];
                 col_total += magic_square[j][i];
             }
+            //checks to see if both the row and column add up to the magic_num
             if (row_total == magic_num && col_total == magic_num)
             {
                 error = false;
             }
             else
                 error = true;
+<<<<<<< HEAD
             row_total = 0;
             col_total = 0;
             diag_total1 += magic_square[i][i];
             diag_total2 += magic_square[max_index - i][i];
         }
+=======
+            //resets the row_total and col_total so that they can be used again in the for loop
+            row_total = 0;
+            col_total = 0;
+            //tracks the total of each diagonal
+            diag_total1 += magic_square[i][i];
+            diag_total2 += magic_square[max_index - i][i];
+        }
+        //checks to see if all the diagonals, rows, and columns all add up to the same magic_num
+>>>>>>> origin/master
         if (diag_total1 == magic_num && diag_total2 == magic_num && error == false)
         {
             test = true;
@@ -313,10 +337,12 @@ public class mathy
         {
             test = false;
         }
+        //returns true or false based on whether or not the square is magic
         return test;
     }
     public int getMagicNum()
     {
+        //returns the magic number!!!!!!!!
         return magic_num;
     }
 }

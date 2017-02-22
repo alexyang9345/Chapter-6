@@ -11,6 +11,7 @@ import java.text.NumberFormat;
 import javax.swing.*;
 import java.util.StringTokenizer;
 import java.util.*;
+import java.util.ArrayList;
 
 public class ch6intro_to_array
 
@@ -20,8 +21,54 @@ public class ch6intro_to_array
 public static void main (String[] args)
 {
 
-
-/**/
+    //this is a general ArrayList:
+    ArrayList list = new ArrayList();
+    
+    //Type of ArrayList holds only the Type
+    ArrayList <String> farm = new ArrayList<>();
+    
+    farm.add("cow");farm.add("pig");farm.add("chicken");farm.add("ugly duckling");
+    farm.add("chicken");farm.add("chicken");farm.add("ugly duckling");
+    System.out.println(farm);
+    
+    for (int i = 0; i < 20; i++)
+    {
+        farm.add("cow");
+        farm.add("dog");
+        farm.add("horse");
+        farm.add("ugly duckling");
+        farm.add("ugly duckling");
+    }
+    System.out.println(farm);
+    
+    int count = 0;
+    for (int i = 0; i < farm.size(); i++)
+    {
+        //for (int i = farm.size() - 1; i >= 0; i--)
+        if (farm.get(i).equals("cow"))
+            count++;
+        //.set() replaces tha object and returns the object at that index
+        //farm.set(i, "cat");
+        
+        /*
+        if(farm.get(i).equals("chicken"))
+            farm.remove(i);
+        else
+            i++;
+        */
+        
+       while(farm.get(i).equals("chicken"))
+            farm.remove(i);    
+    }
+    System.out.println(farm);
+    System.out.println("There are " + count + " cows. ");
+    
+    ArrayList mycds = new ArrayList();
+    
+    CD alex = new CD("Coobert", "Jundydago", 0.04, 20);
+    CD bob = new CD("Sherman", "Fillimop", 0.00, 12);
+    CD charlie = new CD("Herbert", "Butterboy", 0.00, 6);
+    /**
 
          
        int x = 50;
@@ -61,9 +108,9 @@ public static void main (String[] args)
 
 
 
-/**/
+
         int look = 42;
-/**/
+
         //System.out.println("Found" + Searches.linearSearch(num,look)  );
         //Sorts.selectionSort(num);
         Sorts.insertionSort(num);
@@ -133,7 +180,7 @@ public static void main (String[] args)
        negnum = neg(num);
 
 
-*/
+
 
     int [][] scores = { {1,2,3},//6
                        {2,2,3},//7
@@ -160,7 +207,7 @@ public static void main (String[] args)
             System.out.print(table[row][col] + "\t");
         System.out.println();
     }
-   
+/**/   
 }// end of main
 
    public static int[] doubleSize(int[] array)
@@ -196,8 +243,7 @@ public static void main (String[] args)
 
 
    }// end of odd
-   
-   
+}
    
 /*
  //====================================================
@@ -209,9 +255,8 @@ public static void main (String[] args)
    }//end of neg
 
     /*  */
-}
-// end of class
 
+// end of class
 
 
 
