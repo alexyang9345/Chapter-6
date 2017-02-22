@@ -265,6 +265,7 @@ public class mathy
 
 
     }
+    
     public boolean isMagic()
     {
        return check();
@@ -274,6 +275,7 @@ public class mathy
     {
         int value = 0;
         this.magic_square = magic_square;
+        magic_num = 0;
         for (int i = 0; i < magic_square[0].length; i++)
         {
             value = magic_square[0][i];
@@ -283,7 +285,7 @@ public class mathy
     
     public boolean check()
     {
-        int row_total = 0, col_total = 0, diag_total1 = 0, diag_total2 = 0, length = magic_square[0].length;
+        int row_total = 0, col_total = 0, diag_total1 = 0, diag_total2 = 0, max_index = magic_square[0].length - 1;
         boolean test, error = true;
         for (int i = 0; i < magic_square[0].length; i++)
         {
@@ -295,20 +297,15 @@ public class mathy
             if (row_total == magic_num && col_total == magic_num)
             {
                 error = false;
-                if (i != magic_square[0].length - 1)
-                {
-                    System.out.println(i + "!");
-                    row_total = 0;
-                    col_total = 0;
-                }
             }
             else
                 error = true;
+            row_total = 0;
+            col_total = 0;
             diag_total1 += magic_square[i][i];
-            diag_total2 += magic_square[length - 1 - i][i];
+            diag_total2 += magic_square[max_index - i][i];
         }
-        System.out.println(row_total + " "  + col_total + " "  + diag_total1 + " "  + diag_total2);
-        if (row_total == magic_num && col_total == magic_num && diag_total1 == magic_num && diag_total2 == magic_num && error == false)
+        if (diag_total1 == magic_num && diag_total2 == magic_num && error == false)
         {
             test = true;
         }

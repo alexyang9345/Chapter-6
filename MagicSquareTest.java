@@ -33,21 +33,21 @@ public class MagicSquareTest
                          {3,4,8}  };
 
     // Do you belive in magic?
-    int [][] square2 = {{11,24, 7,20, 3},
-                        { 4,12,25, 8,16},
-                        {17, 5,13,21, 9},
-                        {10,18, 1,14,22},
-                        {23, 6,19, 2,15}  };
+    int [][] square2 = {{11, 24, 7, 20, 3},
+                        {4, 12, 25, 8, 16},
+                        {17, 5, 13, 21, 9},
+                        {10, 18, 1, 14, 22},
+                        {23, 6, 19, 2, 15}};
 
     mathy useful = new mathy(square);
+    useful.setMagicSquare(square);
 
     if (useful.isMagic())
         System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
     else
         System.out.println("Hello muggle");
-/**
-    useful.setMagicSquare(square1);
 
+    useful.setMagicSquare(square1);
     // print the same results for square2 and square3
     if (useful.isMagic())
 		System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
@@ -59,7 +59,6 @@ public class MagicSquareTest
 		System.out.println("It's MAGIC!! With a sum of "+ useful.getMagicNum());
 	else
 		System.out.println("Hello muggle");
-		**/
 }//end of main
 }// end of class
 
