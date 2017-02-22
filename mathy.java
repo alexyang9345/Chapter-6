@@ -278,10 +278,8 @@ public class mathy
         int value = 0;
         this.magic_square = magic_square;
         magic_num = 0;
-<<<<<<< HEAD
-=======
+        
         //sets the magic_num for each square
->>>>>>> origin/master
         for (int i = 0; i < magic_square[0].length; i++)
         {
             value = magic_square[0][i];
@@ -291,10 +289,7 @@ public class mathy
     
     public boolean check()
     {
-<<<<<<< HEAD
-=======
         //initializes variables
->>>>>>> origin/master
         int row_total = 0, col_total = 0, diag_total1 = 0, diag_total2 = 0, max_index = magic_square[0].length - 1;
         boolean test, error = true;
         //
@@ -313,13 +308,7 @@ public class mathy
             }
             else
                 error = true;
-<<<<<<< HEAD
-            row_total = 0;
-            col_total = 0;
-            diag_total1 += magic_square[i][i];
-            diag_total2 += magic_square[max_index - i][i];
-        }
-=======
+        
             //resets the row_total and col_total so that they can be used again in the for loop
             row_total = 0;
             col_total = 0;
@@ -328,7 +317,7 @@ public class mathy
             diag_total2 += magic_square[max_index - i][i];
         }
         //checks to see if all the diagonals, rows, and columns all add up to the same magic_num
->>>>>>> origin/master
+
         if (diag_total1 == magic_num && diag_total2 == magic_num && error == false)
         {
             test = true;
